@@ -469,23 +469,6 @@ After configuration, requests can be made like so:
 client.update("I'm tweeting with @gem!")
 ```
 
-### Middleware
-The Faraday middleware stack is fully configurable and is exposed as a
-`Faraday::RackBuilder` object. You can modify the default middleware in-place:
-
-```ruby
-client.middleware.insert_after Twitter::Response::RaiseError, CustomMiddleware
-```
-
-A custom adapter may be set as part of a custom middleware stack:
-
-```ruby
-client.middleware = Faraday::RackBuilder.new do |faraday|
-  # Specify a middleware stack here
-  faraday.adapter :some_other_adapter
-end
-```
-
 ## Usage Examples
 All examples require an authenticated Twitter client. See the section on <a
 href="#configuration">configuration</a>.

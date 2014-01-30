@@ -299,7 +299,7 @@ module Twitter
       end
 
       def post_retweet(tweet, options)
-        response = post("/1.1/statuses/retweet/#{extract_id(tweet)}.json", options).body
+        response = post("/1.1/statuses/retweet/#{extract_id(tweet)}.json", options)
         Twitter::Tweet.new(response)
       end
     end

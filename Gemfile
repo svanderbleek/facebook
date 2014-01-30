@@ -1,8 +1,9 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
 
 gem 'jruby-openssl', :platforms => :jruby
 gem 'rake'
 gem 'yard'
+gem 'http', :path => '../http'
 
 group :development do
   gem 'pry'
@@ -20,7 +21,7 @@ group :test do
   gem 'rubocop', '>= 0.16', :platforms => [:ruby_19, :ruby_20, :ruby_21]
   gem 'simplecov', :require => false
   gem 'timecop', '0.6.1'
-  gem 'webmock'
+  gem 'webmock', :path => '../webmock'
   gem 'yardstick'
 end
 
